@@ -12,7 +12,7 @@ pipeline {
     CPIOAuthCredentials = "b475b5e2-f7f8-4122-8120-286c8f09ac83$ANu54K511MAbz7baGMk-b5np32W9CX6Mql5wsJEPXao="
     GITRepositoryURL = "github.com/oussama-bht-proclus/CI_CD_TEST"
     GITCredentials = "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"
-    GITBranch = "${env.GIT_BRANCH_NAME}"
+    GITBranch = "main"
     GITFolder = "IntegrationContent/IntegrationArtefacts"
   }
 
