@@ -52,6 +52,7 @@ pipeline {
 
           //get token
 		      println("Requesting token from Cloud Integration tenant");
+		println("test print")
           def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
             authentication: env.CPIOAuthCredentials,
             contentType: 'APPLICATION_JSON',
@@ -59,7 +60,9 @@ pipeline {
             responseHandle: 'LEAVE_OPEN',
             timeout: 30,
             url: 'https://' + env.CPIOAuthHost + '/oauth/token?grant_type=client_credentials';
+		println("test print 1")
           def jsonObjToken = readJSON text: getTokenResp.content
+		println("test print 2")
           def token = "Bearer " + jsonObjToken.access_token
 		println("test test");
 
