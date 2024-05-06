@@ -7,9 +7,9 @@ pipeline {
     IntegrationPackage = "CICD" //relevant for flows that are uploaded the first time 
     DeployFlow = true //if the flow should only be uploaded, set this to false
     DeploymentCheckRetryCounter = 20 //multiply by 3 to get the maximum deployment time
-    CPIHost = "${env.CPI_HOST}"
-    CPIOAuthHost = "${env.CPI_OAUTH_HOST}"
-    CPIOAuthCredentials = "${env.CPI_OAUTH_CRED}"
+    CPIHost = "https://d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.ondemand.com"
+    CPIOAuthHost = "https://d4854fbatrial.authentication.us10.hana.ondemand.com"
+    CPIOAuthCredentials = "b475b5e2-f7f8-4122-8120-286c8f09ac83$ANu54K511MAbz7baGMk-b5np32W9CX6Mql5wsJEPXao="
     GITRepositoryURL = "${env.GIT_REPOSITORY_URL}"
     GITCredentials = "${env.GIT_CRED}"
     GITBranch = "${env.GIT_BRANCH_NAME}"
