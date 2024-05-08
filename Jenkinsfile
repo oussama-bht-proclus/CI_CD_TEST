@@ -54,7 +54,7 @@ pipeline {
           //get token
 		      println("Requesting token from Cloud Integration tenant");
 		println("test print")
-	  try {
+	  /*try {*/
 	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
 	            authentication: env.CPIOAuthCredentials,
 	            contentType: 'APPLICATION_JSON',
@@ -62,10 +62,10 @@ pipeline {
 	            responseHandle: 'LEAVE_OPEN',
 	            timeout: 50,
 	            url: 'https://' + env.CPIOAuthHost + '/oauth/token?grant_type=client_credentials';
-	  catch (Exception e) {
+	 /* catch (Exception e) {
 	      println("Error occurred while obtaining token: " + e.getMessage());
 	      return; // Stop execution if there's an error
-	  }
+	  }*/
 	  println("test print 1")
           def jsonObjToken = readJSON text: getTokenResp.content
 		println("test print 2")
