@@ -53,7 +53,7 @@ pipeline {
 
           //get token
 		      println("Requesting token from Cloud Integration tenant");
-		println("test print")
+		println("test print 0")
 	  /*try {*/
 	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
 	            authentication: 'c2ItODJiMzMyZGItNjBiMi00NzFmLTkxNTEtYjVkYWJiNzUwMGMxIWIyNzkwNDR8aXQtcnQtZDQ4NTRmYmF0cmlhbCFiMjY2NTU6NzgxNzY3OGUtMGE4Mi00YTZmLTllYzMtZTk2YTY3YTk3NWZlJFBFNUtZSWp6NVpmRGlnSHE3TUkxWjZ3NDRxNUl6VDFZT3dNbGRXenVzaGs9',
