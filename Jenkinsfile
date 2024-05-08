@@ -54,7 +54,7 @@ pipeline {
           //get token
 		      println("Requesting token from Cloud Integration tenant");
 		println("test print 0")
-	  /*try {*/
+	  try {
 	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
 	            authentication: 'c2ItODJiMzMyZGItNjBiMi00NzFmLTkxNTEtYjVkYWJiNzUwMGMxIWIyNzkwNDR8aXQtcnQtZDQ4NTRmYmF0cmlhbCFiMjY2NTU6NzgxNzY3OGUtMGE4Mi00YTZmLTllYzMtZTk2YTY3YTk3NWZlJFBFNUtZSWp6NVpmRGlnSHE3TUkxWjZ3NDRxNUl6VDFZT3dNbGRXenVzaGs9',
 	            contentType: 'APPLICATION_JSON',
@@ -62,10 +62,9 @@ pipeline {
 	            responseHandle: 'LEAVE_OPEN',
 	            timeout: 50,
 	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';
-	 /* catch (Exception e) {
+	  catch (Exception e) {
 	      println("Error occurred while obtaining token: " + e.getMessage());
-	      return; // Stop execution if there's an error
-	  }*/
+	  }
 	  println("test print 1")
           def jsonObjToken = readJSON text: getTokenResp.content
 		println("test print 2")
