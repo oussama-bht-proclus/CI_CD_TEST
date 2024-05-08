@@ -10,7 +10,7 @@ pipeline {
     CPIHost = "d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.ondemand.com"
     //CPIOAuthHost = "https://d4854fbatrial.authentication.us10.hana.ondemand.com"
     //CPIOAuthHost = "d4854fbatrial.authentication.us10.hana.ondemand.com"
-	  CPIOAuthHost = "d4854fbatrial.authentication.us10.hana.ondemand.com"
+    CPIOAuthHost = "d4854fbatrial.authentication.us10.hana.ondemand.com"
     CPIOAuthCredentials = "c2ItODJiMzMyZGItNjBiMi00NzFmLTkxNTEtYjVkYWJiNzUwMGMxIWIyNzkwNDR8aXQtcnQtZDQ4NTRmYmF0cmlhbCFiMjY2NTU6NzgxNzY3OGUtMGE4Mi00YTZmLTllYzMtZTk2YTY3YTk3NWZlJFBFNUtZSWp6NVpmRGlnSHE3TUkxWjZ3NDRxNUl6VDFZT3dNbGRXenVzaGs9"
     GITRepositoryURL = "github.com/oussama-bht-proclus/CI_CD_TEST"
     GITCredentials = "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"
@@ -56,12 +56,12 @@ pipeline {
 		println("test print")
 	  /*try {*/
 	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
-	            authentication: env.CPIOAuthCredentials,
+	            authentication: 'sb-82b332db-60b2-471f-9151-b5dabb7500c1!b279044|it-rt-d4854fbatrial!b26655:7817678e-0a82-4a6f-9ec3-e96a67a975fe$PE5KYIjz5ZfDigHq7MI1Z6w44q5IzT1YOwMldWzushk=',
 	            contentType: 'APPLICATION_JSON',
 	            httpMode: 'POST',
 	            responseHandle: 'LEAVE_OPEN',
 	            timeout: 50,
-	            url: 'https://' + env.CPIOAuthHost + '/oauth/token?grant_type=client_credentials';
+	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';
 	 /* catch (Exception e) {
 	      println("Error occurred while obtaining token: " + e.getMessage());
 	      return; // Stop execution if there's an error
