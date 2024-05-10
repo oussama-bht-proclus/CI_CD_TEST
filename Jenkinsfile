@@ -56,7 +56,7 @@ pipeline {
 		println("test print 00")
 	  
 	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
-	            authentication: 'c2ItMmU3MjhhMzUtZTA2MC00MDRmLTliMGUtODIyYWM3ZjMyODNmIWIyNzkwNDR8aXQhYjI2NjU1OmI0NzViNWUyLWY3ZjgtNDEyMi04MTIwLTI4NmM4ZjA5YWM4MyRBTnU1NEs1MTFNQWJ6N2JhR01rLWI1bnAzMlc5Q1g2TXFsNXdzSkVQWGFvPQ==',
+	            authentication: 'c2ItODJiMzMyZGItNjBiMi00NzFmLTkxNTEtYjVkYWJiNzUwMGMxIWIyNzkwNDR8aXQtcnQtZDQ4NTRmYmF0cmlhbCFiMjY2NTU6NzgxNzY3OGUtMGE4Mi00YTZmLTllYzMtZTk2YTY3YTk3NWZlJFBFNUtZSWp6NVpmRGlnSHE3TUkxWjZ3NDRxNUl6VDFZT3dNbGRXenVzaGs9',
 	            contentType: 'APPLICATION_JSON',
 	            httpMode: 'POST',
 	            responseHandle: 'LEAVE_OPEN',
