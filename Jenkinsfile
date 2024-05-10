@@ -56,13 +56,13 @@ pipeline {
 		println("test print 00")
 	  
 	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
-	            authentication: 'c2ItODJiMzMyZGItNjBiMi00NzFmLTkxNTEtYjVkYWJiNzUwMGMxIWIyNzkwNDR8aXQtcnQtZDQ4NTRmYmF0cmlhbCFiMjY2NTU6NzgxNzY3OGUtMGE4Mi00YTZmLTllYzMtZTk2YTY3YTk3NWZlJFBFNUtZSWp6NVpmRGlnSHE3TUkxWjZ3NDRxNUl6VDFZT3dNbGRXenVzaGs9',
+	            authentication: 'c2ItMmU3MjhhMzUtZTA2MC00MDRmLTliMGUtODIyYWM3ZjMyODNmIWIyNzkwNDR8aXQhYjI2NjU1OmI0NzViNWUyLWY3ZjgtNDEyMi04MTIwLTI4NmM4ZjA5YWM4MyRBTnU1NEs1MTFNQWJ6N2JhR01rLWI1bnAzMlc5Q1g2TXFsNXdzSkVQWGFvPQ==',
 	            contentType: 'APPLICATION_JSON',
 	            httpMode: 'POST',
 	            responseHandle: 'LEAVE_OPEN',
 	            timeout: 50,
 		    consoleLogResponseBody : true,
-	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';
+	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token';
 	 
 	  println("test print 1")
           def jsonObjToken = readJSON text: getTokenResp.content
