@@ -62,7 +62,7 @@ pipeline {
 	            responseHandle: 'LEAVE_OPEN',
 	            timeout: 50,
 		    consoleLogResponseBody : true,
-	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token';
+	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';
 	 
 	  println("test print 1")
           def jsonObjToken = readJSON text: getTokenResp.content
