@@ -87,7 +87,7 @@ pipeline {
 	    contentType : 'APPLICATION_JSON',
 	    customHeaders: [[name: 'Authorization', value: 'Bearer '+jsonObjToken.access_token]],
 	    consoleLogResponseBody : true,
-            url: 'https://l' + env.CPIHost + '/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
+            url: 'https://d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.ondemand.com/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 
 	  println("test print 3")
           def filecontent = readFile encoding: 'Base64', file: filePath;
