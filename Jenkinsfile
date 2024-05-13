@@ -8,10 +8,8 @@ pipeline {
     DeployFlow = true //if the flow should only be uploaded, set this to false
     DeploymentCheckRetryCounter = 20 //multiply by 3 to get the maximum deployment time
     CPIHost = "d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.ondemand.com"
-    //CPIOAuthHost = "https://d4854fbatrial.authentication.us10.hana.ondemand.com"
-    //CPIOAuthHost = "d4854fbatrial.authentication.us10.hana.ondemand.com"
     CPIOAuthHost = "d4854fbatrial.authentication.us10.hana.ondemand.com"
-    CPIOAuthCredentials = "c2ItODJiMzMyZGItNjBiMi00NzFmLTkxNTEtYjVkYWJiNzUwMGMxIWIyNzkwNDR8aXQtcnQtZDQ4NTRmYmF0cmlhbCFiMjY2NTU6NzgxNzY3OGUtMGE4Mi00YTZmLTllYzMtZTk2YTY3YTk3NWZlJFBFNUtZSWp6NVpmRGlnSHE3TUkxWjZ3NDRxNUl6VDFZT3dNbGRXenVzaGs9"
+    CPIOAuthCredentials = "${env.CPI_OAUTH_CREDS_API}"
     GITRepositoryURL = "github.com/oussama-bht-proclus/CI_CD_TEST"
     GITCredentials = "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"
     GITBranch = "main"
@@ -56,7 +54,7 @@ pipeline {
 		println("test print 00")
 	  
 	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
-	            authentication: 'c2ItODJiMzMyZGItNjBiMi00NzFmLTkxNTEtYjVkYWJiNzUwMGMxIWIyNzkwNDR8aXQtcnQtZDQ4NTRmYmF0cmlhbCFiMjY2NTU6NzgxNzY3OGUtMGE4Mi00YTZmLTllYzMtZTk2YTY3YTk3NWZlJFBFNUtZSWp6NVpmRGlnSHE3TUkxWjZ3NDRxNUl6VDFZT3dNbGRXenVzaGs9',
+	            authentication: env.CPIOAuthCredentials,
 	            contentType: 'APPLICATION_JSON',
 	            httpMode: 'POST',
 	            responseHandle: 'LEAVE_OPEN',
