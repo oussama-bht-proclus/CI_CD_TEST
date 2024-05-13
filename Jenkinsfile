@@ -79,16 +79,15 @@ pipeline {
 		println("test print 2");
 	  println("auth token :" + token)
 
-          //check if the flow already exists on the tenant
+	  getTokenResp.close()
+	  //check if the flow already exists on the tenant
           def checkResp = httpRequest acceptType: 'APPLICATION_JSON',
-            customHeaders: [
-              [maskValue: false, name: 'Authorization', value: token]
-            ],
             httpMode: 'GET',
             responseHandle: 'LEAVE_OPEN',
             validResponseCodes: '200,201,202,404',
             timeout: 50,
 	    contentType : 'APPLICATION_JSON',
+	    customHeaders: [[name: 'Authorization', value: token]],
 	    consoleLogResponseBody : true,
             url: 'https://' + env.CPIHost + '/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 
