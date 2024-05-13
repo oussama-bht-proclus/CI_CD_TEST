@@ -3,7 +3,7 @@ pipeline {
 
   //Configure the following environment variables before executing the Jenkins Job
   environment {
-    IntegrationFlowID = "IntegrationFlow1"
+    IntegrationFlowID = "com.nmbs.if.CS.CPI2EMS.I0001.Customer.Create_Update"
     IntegrationPackage = "CICD" //relevant for flows that are uploaded the first time 
     DeployFlow = true //if the flow should only be uploaded, set this to false
     DeploymentCheckRetryCounter = 20 //multiply by 3 to get the maximum deployment time
