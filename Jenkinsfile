@@ -9,7 +9,7 @@ pipeline {
     DeploymentCheckRetryCounter = 20 //multiply by 3 to get the maximum deployment time
     CPIHost = "d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.ondemand.com"
     CPIOAuthHost = "d4854fbatrial.authentication.us10.hana.ondemand.com"
-    CPIOAuthCredentials = "${env.OAUTH_TEST_API}"
+    CPIOAuthCredentials = "${env.CPI_OAUTH_CREDS_INTEGRATION}"
     GITRepositoryURL = "github.com/oussama-bht-proclus/CI_CD_TEST"
     GITCredentials = "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"
     GITBranch = "main"
