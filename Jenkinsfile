@@ -54,7 +54,7 @@ pipeline {
 		println("test print 00")
 	  
 	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
-	            authentication: 'OAUTH_TEST_INTEGRATION',
+	            authentication: 'OAUTH_TEST_API',
 	            contentType: 'APPLICATION_JSON',
 	            httpMode: 'POST',
 	            responseHandle: 'LEAVE_OPEN',
