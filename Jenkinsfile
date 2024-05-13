@@ -89,7 +89,7 @@ pipeline {
 	    contentType : 'APPLICATION_JSON',
 	    customHeaders: [[name: 'Authorization', value: 'Bearer '+jsonObjToken.access_token]],
 	    consoleLogResponseBody : true,
-            url: 'https://' + env.CPIHost + '/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
+            url: 'https://l' + env.CPIHost + '/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 
 	  println("test print 3")
           def filecontent = readFile encoding: 'Base64', file: filePath;
