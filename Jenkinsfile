@@ -79,6 +79,7 @@ pipeline {
 		println("test print 2")
           def token = "Bearer " + jsonObjToken.access_token
 		println("test test");
+	  println("auth token :" + token)
 
           //check if the flow already exists on the tenant
           def checkResp = httpRequest acceptType: 'APPLICATION_JSON',
