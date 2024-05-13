@@ -50,8 +50,8 @@ pipeline {
           zip dir: folder, glob: '', zipFile: filePath;
 
           //get token
-		      println("Requesting token from Cloud Integration tenant");
-		println("test print 00")
+		println("Requesting token from Cloud Integration tenant");
+		println("test print 0")
 	  
 	          /*def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
 	            authentication: 'OAUTH_TEST_API',
@@ -71,14 +71,12 @@ pipeline {
 		    consoleLogResponseBody : true,
 	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';
 	 
-	  println("test print 1")
 	  println(" your response object is :"+getTokenResp.getContent())
           //def jsonObjToken = readJSON text: getTokenResp.content
-	  // def jsonObjToken =  readJSON text: getTokenResp.getContent()
 	  def jsonObjToken = new groovy.json.JsonSlurper().parseText(getTokenResp.getContent())
-		println("test print 2")
+		println("test print 1")
           def token = "Bearer " + jsonObjToken.access_token
-		println("test test");
+		println("test print 2");
 	  println("auth token :" + token)
 
           //check if the flow already exists on the tenant
@@ -92,6 +90,7 @@ pipeline {
             timeout: 30,
             url: 'https://' + env.CPIHost + '/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 
+	  println("test print 3")
           def filecontent = readFile encoding: 'Base64', file: filePath;
           if (checkResp.status == 404) {
             //Upload integration flow via POST
