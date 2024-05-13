@@ -72,6 +72,7 @@ pipeline {
 	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';
 	 
 	  println("test print 1")
+	  println(" your response object is :"+getTokenResp.getContent())
           def jsonObjToken = readJSON text: getTokenResp.content
 		println("test print 2")
           def token = "Bearer " + jsonObjToken.access_token
