@@ -88,6 +88,7 @@ pipeline {
             responseHandle: 'LEAVE_OPEN',
             validResponseCodes: '200,201,202,404',
             timeout: 50,
+	    contentType : 'APPLICATION_JSON',
 	    consoleLogResponseBody : true,
             url: 'https://' + env.CPIHost + '/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 
