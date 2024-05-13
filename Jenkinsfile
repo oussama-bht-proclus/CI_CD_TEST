@@ -8,7 +8,7 @@ pipeline {
     DeployFlow = true //if the flow should only be uploaded, set this to false
     DeploymentCheckRetryCounter = 20 //multiply by 3 to get the maximum deployment time
     CPIHost = "d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.ondemand.com"
-    CPIOAuthHost = "d4854fbatrial.authentication.us10.hana.ondemand.com"
+    CPIOAuthHost = "d4854fbatrial.it-cpitrial05-rt.cfapps.us10-001.hana.ondemand.com"
     CPIOAuthCredentials = "${env.CPI_OAUTH_CREDS_INTEGRATION}"
     GITRepositoryURL = "github.com/oussama-bht-proclus/CI_CD_TEST"
     GITCredentials = "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"
@@ -87,7 +87,8 @@ pipeline {
             httpMode: 'GET',
             responseHandle: 'LEAVE_OPEN',
             validResponseCodes: '200,201,202,404',
-            timeout: 30,
+            timeout: 50,
+	    consoleLogResponseBody : true,
             url: 'https://' + env.CPIHost + '/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 
 	  println("test print 3")
