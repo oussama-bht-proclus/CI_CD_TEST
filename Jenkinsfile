@@ -74,9 +74,7 @@ pipeline {
 	  println(" your response object is :"+getTokenResp.getContent())
           //def jsonObjToken = readJSON text: getTokenResp.content
 	  def jsonObjToken = new groovy.json.JsonSlurper().parseText(getTokenResp.getContent())
-		println("test print 1")
           def token = "Bearer " + jsonObjToken.access_token
-		println("test print 2");
 	  println("auth token :" + token)
 
 	  getTokenResp.close()
