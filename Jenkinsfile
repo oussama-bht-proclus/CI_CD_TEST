@@ -67,7 +67,7 @@ pipeline {
 	            httpMode: 'POST',
 	            responseHandle: 'LEAVE_OPEN',
 	            timeout: 50,
-		    customHeaders:[[name:'Authorization', value:"Basic ${OAUTH_TEST_API}"]],
+		    customHeaders:[[name:'Authorization', value:"Basic c2ItMmU3MjhhMzUtZTA2MC00MDRmLTliMGUtODIyYWM3ZjMyODNmIWIyNzkwNDR8aXQhYjI2NjU1OmI0NzViNWUyLWY3ZjgtNDEyMi04MTIwLTI4NmM4ZjA5YWM4MyRBTnU1NEs1MTFNQWJ6N2JhR01rLWI1bnAzMlc5Q1g2TXFsNXdzSkVQWGFvPQ=="]],
 		    consoleLogResponseBody : true,
 	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';
 	 
