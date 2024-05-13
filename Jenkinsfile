@@ -54,7 +54,7 @@ pipeline {
 		println("test print 00")
 	  
 	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
-	            authentication: env.CPIOAuthCredentials,
+	            authentication: 'OAUTH_TEST_API',
 	            contentType: 'APPLICATION_JSON',
 	            httpMode: 'POST',
 	            responseHandle: 'LEAVE_OPEN',
