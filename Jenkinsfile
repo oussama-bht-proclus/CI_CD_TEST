@@ -53,12 +53,21 @@ pipeline {
 		      println("Requesting token from Cloud Integration tenant");
 		println("test print 00")
 	  
-	          def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
+	          /*def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
 	            authentication: 'OAUTH_TEST_API',
 	            contentType: 'APPLICATION_JSON',
 	            httpMode: 'POST',
 	            responseHandle: 'LEAVE_OPEN',
 	            timeout: 50,
+		    consoleLogResponseBody : true,
+	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';*/
+	  def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
+	           // authentication: 'OAUTH_TEST_API',
+	            contentType: 'APPLICATION_JSON',
+	            httpMode: 'POST',
+	            responseHandle: 'LEAVE_OPEN',
+	            timeout: 50,
+		    customHeaders:[[name:'Authorization', value:"Basic ${OAUTH_TEST_API}"]]
 		    consoleLogResponseBody : true,
 	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';
 	 
