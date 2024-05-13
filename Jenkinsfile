@@ -87,7 +87,7 @@ pipeline {
             validResponseCodes: '200,201,202,404',
             timeout: 50,
 	    contentType : 'APPLICATION_JSON',
-	    customHeaders: [[name: 'Authorization', value: token]],
+	    customHeaders: [[name: 'Authorization', value: 'Bearer '+jsonObjToken.access_token]],
 	    consoleLogResponseBody : true,
             url: 'https://' + env.CPIHost + '/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 
