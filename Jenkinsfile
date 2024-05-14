@@ -63,7 +63,7 @@ pipeline {
 	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';*/
 	  def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
 	           // authentication: 'OAUTH_TEST_API',
-	            contentType: 'APPLICATION_JSON',
+	            contentType: 'TEXT_PLAIN',
 	            httpMode: 'POST',
 	            responseHandle: 'LEAVE_OPEN',
 	            timeout: 50,
