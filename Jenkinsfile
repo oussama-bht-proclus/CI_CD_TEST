@@ -92,9 +92,10 @@ pipeline {
             url: 'https://d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.ondemand.com/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 	}catch(Exception err){
 		println("error somewhere")
-		println(err.getMessage())
-		println(err.printStackTrace())
-		println(err)
+		println("Error occurred while making HTTP request:")
+		    println("Error message: ${err.message}")
+		    println("Stack trace:")
+		    err.printStackTrace()
 	}
 
 	  println("test print 3")
