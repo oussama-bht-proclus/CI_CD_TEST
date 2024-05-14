@@ -73,7 +73,7 @@ pipeline {
           def checkResp = httpRequest acceptType: 'APPLICATION_JSON',
             httpMode: 'GET',
             responseHandle: 'LEAVE_OPEN',
-            //validResponseCodes: '200,201,202,404',
+            validResponseCodes: '200,201,202,404',
             timeout: 50,
 	    contentType : 'APPLICATION_JSON',
 	    customHeaders:[[name:'Authorization', value: token]],
