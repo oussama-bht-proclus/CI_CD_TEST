@@ -48,21 +48,11 @@ pipeline {
           def filePath = env.IntegrationFlowID + ".zip";
 
           zip dir: folder, glob: '', zipFile: filePath;
-
 		*/
 
           //get token
-		println("Requesting token from Cloud Integration tenant");
-		println("test print 0")
-	  
-	          /*def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
-	            authentication: 'OAUTH_TEST_API',
-	            contentType: 'APPLICATION_JSON',
-	            httpMode: 'POST',
-	            responseHandle: 'LEAVE_OPEN',
-	            timeout: 50,
-		    consoleLogResponseBody : true,
-	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';*/
+	  println("Requesting token from Cloud Integration tenant");
+	  println("test print 0")
 	  def getTokenResp = httpRequest acceptType: 'APPLICATION_JSON',
 	           // authentication: 'OAUTH_TEST_API',
 	            contentType: 'APPLICATION_JSON',
@@ -74,16 +64,12 @@ pipeline {
 	            url: 'https://d4854fbatrial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials';
 	 
 	  println(" your response object is :"+getTokenResp.getContent())
-          //def jsonObjToken = readJSON text: getTokenResp.content
-	  //def jsonObjToken = new groovy.json.JsonSlurper().parseText(getTokenResp.getContent())
 	  def jsonObjToken = readJSON text: getTokenResp.getContent() 
           def token = "Bearer " + jsonObjToken.access_token
 	  println("auth token :" + token)
-
 	  getTokenResp.close()
+		
 	  //check if the flow already exists on the tenant
-
-	
           def checkResp = httpRequest acceptType: 'APPLICATION_JSON',
             httpMode: 'GET',
             responseHandle: 'LEAVE_OPEN',
