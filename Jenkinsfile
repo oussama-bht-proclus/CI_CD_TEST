@@ -93,9 +93,11 @@ pipeline {
 	}catch(Exception err){
 		println("error somewhere")
 		println("Error occurred while making HTTP request:")
-		    println("Error message: ${err.message}")
-		    println("Stack trace:")
-		    err.printStackTrace()
+		    //println("Error message: ${err.message}")
+		    //println("Stack trace:")
+		    //err.printStackTrace()
+		     println("Error class: ${err.getClass().getName()}")
+    		     println("Error object: $err")
 	}
 
 	  println("test print 3")
