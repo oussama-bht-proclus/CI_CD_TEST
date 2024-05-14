@@ -92,9 +92,12 @@ pipeline {
             url: 'https://d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.fondemand.com/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 	}catch(Exception err){
 		println("error somewhere")
+		println(e.message)
 	}
 
 	  println("test print 3")
+	  def temp = new groovy.json.JsonSlurper().parseText(checkResp.getContent())
+	  println(temp)
           def filecontent = readFile encoding: 'Base64', file: filePath;
           if (checkResp.status == 404) {
             //Upload integration flow via POST
