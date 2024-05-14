@@ -92,7 +92,7 @@ pipeline {
             url: 'https://d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.fondemand.com/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
 	}catch(Exception err){
 		println("error somewhere")
-		println(e.message)
+		println(err.message)
 	}
 
 	  println("test print 3")
