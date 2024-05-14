@@ -83,7 +83,7 @@ pipeline {
 	  getTokenResp.close()
 	  //check if the flow already exists on the tenant
 
-	try {
+	
           def checkResp = httpRequest acceptType: 'APPLICATION_JSON',
             httpMode: 'GET',
             responseHandle: 'LEAVE_OPEN',
@@ -93,9 +93,7 @@ pipeline {
 	    customHeaders:[[name:'Authorization', value: token]],
 	    consoleLogResponseBody : true,
             url: 'https://d4854fbatrial.it-cpitrial05.cfapps.us10-001.hana.ondemand.com/api/v1/IntegrationDesigntimeArtifacts(Id=\'' + env.IntegrationFlowID + '\',Version=\'active\')';
-	}catch(Exception err){
-		println("error somewhere")
-	}
+	
 
 	  println("test print 3")
 	  //def temp = new groovy.json.JsonSlurper().parseText(checkResp.getContent())
